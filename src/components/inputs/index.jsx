@@ -32,7 +32,8 @@ class Inputs extends React.Component {
         } else {
             const skills = this.state.skills.filter(skill =>
                 skill !== event.target.value);
-            this.setState({skills});
+            
+            this.setState({skills: skills});
         }
     }
 
@@ -40,6 +41,7 @@ class Inputs extends React.Component {
         const {name, country, bio, birthday, agree, skills} = this.state;
         return(
             <div className='container'>
+                <form>
                 <input 
                     className='form-control my-2' 
                     type="text" 
@@ -140,6 +142,7 @@ class Inputs extends React.Component {
                     onClick={() => console.log(this.state)}>
                     Show Data
                 </button>
+                </form>
             </div>
         );
     }
