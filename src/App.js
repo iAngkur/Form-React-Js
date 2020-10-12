@@ -3,6 +3,7 @@ import './App.css';
 import Inputs from './components/inputs/index';
 import UncontrolledForm from './components/inputs/uncontrolledForm';
 import ControlledForm from './components/inputs/controlledForm';
+import SplitForm from './components/splitForm';
 
 function App() {
   return (
@@ -20,10 +21,16 @@ function App() {
           <UncontrolledForm />
         </div> */}
 
-        <div className="col">
+        {/* <div className="col">
           <h3>Controlled Form</h3>
           <hr />
           <ControlledForm />
+        </div> */}
+
+        <div className="col">
+          <h3>Split Form</h3>
+          <hr />
+          <SplitForm />
         </div>
       </div>
     </div>
