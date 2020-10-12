@@ -1,40 +1,68 @@
 import React from 'react';
 import './App.css';
-import Inputs from './components/inputs/index';
-import UncontrolledForm from './components/inputs/uncontrolledForm';
-import ControlledForm from './components/inputs/controlledForm';
-import SplitForm from './components/splitForm';
+import SignupForm from './components/signupForm/index';
 
-function App() {
-  return (
-    <div className="container mt-5">
-      <div className="row">
-        {/* <div className="col">
-          <h3>Normal Form</h3>
-          <hr />
-          <Inputs />
-        </div>
+class App extends React.Component {
 
-        <div className="col">
-          <h3>Uncontrolled Form</h3>
-          <hr />
-          <UncontrolledForm />
-        </div> */}
+  state = {
+    users: [] // jarai signup korbe tader details etay save kore rakhbo
+  }
 
-        {/* <div className="col">
-          <h3>Controlled Form</h3>
-          <hr />
-          <ControlledForm />
-        </div> */}
+  createUser = (user) => {
+    user.id = new Date().getTime().toString()
+    this.setState({
+      users: [...this.state.users, user]
+    });
+  }
 
-        <div className="col">
-          <h3>Split Form</h3>
-          <hr />
-          <SplitForm />
+  render() {
+    return (
+      <div className="container mt-5">
+        <div className="row">
+          {/* <div className="col">
+            <h3>Normal Form</h3>
+            <hr />
+            <Inputs />
+          </div>
+  
+          <div className="col">
+            <h3>Uncontrolled Form</h3>
+            <hr />
+            <UncontrolledForm />
+          </div> */}
+  
+          {/* <div className="col">
+            <h3>Controlled Form</h3>
+            <hr />
+            <ControlledForm />
+          </div> */}
+  
+          {/* <div className="col">
+            <h3>Split Form</h3>
+            <hr />
+            <SplitForm />
+          </div> */}
+          <div className="col">
+            <h3>Signup Form</h3>
+            <hr />
+            <SignupForm createUser={this.createUser}/>
+
+            <div>
+              <h3 className="mt-5">All Registered Users</h3>
+              <ul className="list-group">
+                {this.state.users.map(user => (
+                  <li key={user.id} className="list-group-item">
+                    {user.name} -- {user.email}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;

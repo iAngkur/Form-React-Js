@@ -33,9 +33,9 @@ const Form = props => (
 );
 
 InputText.propTypes = {
-    values: propTypes.object.isRequired,
-    hanldeChange: propTypes.func.isRequired,
-    handleSubmit: propTypes.func.isRequired,
+    values: PropTypes.object.isRequired,
+    hanldeChange: PropTypes.func.isRequired,
+    handleSubmit: PropTypes.func.isRequired,
 };
 
 export default Form;
